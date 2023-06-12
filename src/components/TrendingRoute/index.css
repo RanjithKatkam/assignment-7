@@ -1,0 +1,37 @@
+.trending-icon {
+  font-size: 35px;
+  color: red;
+}
+
+.logo-container {
+  background-color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  height: 60px;
+  width: 60px;
+}
+
+.content-container {
+  height: 100%;
+  overflow: auto;
+  width: 100%;
+}
+
+.container {
+  padding: 30px;
+
+  width: 100%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+}
+
+.trending-heading {
+  color: #000;
+  font-weight: bold;
+  font-size: 40px;
+  font-family: 'Bree Serif';
+  margin-left: 30px;
+}

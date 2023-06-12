@@ -1,0 +1,8 @@
+.trending-thumbnail-image {
+  width: 40%;
+}
+
+.publish-div {
+  display: flex;
+  align-items: center;
+}

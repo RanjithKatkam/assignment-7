@@ -1,0 +1,99 @@
+.header-logo {
+  width: 50%;
+}
+
+.sun {
+  font-size: 30px;
+  color: #fff;
+}
+
+.moon {
+  font-size: 30px;
+}
+
+.theme-button {
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+
+.profile {
+  width: 18%;
+}
+
+.light-logout-button {
+  color: #3b82f6;
+  font-family: 'Bree Serif';
+  outline: none;
+  cursor: pointer;
+  border: 2px solid #3b82f6;
+  background-color: transparent;
+  font-size: 18px;
+  padding: 2px 12px 3px 12px;
+  border-radius: 5px;
+}
+
+.dark-logout-button {
+  color: #fff;
+  font-family: 'Bree Serif';
+  outline: none;
+  cursor: pointer;
+  border: 2px solid #fff;
+  background-color: transparent;
+  font-size: 18px;
+  padding: 2px 12px 3px 12px;
+  border-radius: 5px;
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f1f1;
+  width: 400px;
+  height: 150px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+.popup-heading {
+  color: #00306e;
+  font-family: 'Bree Serif';
+  font-size: 19px;
+}
+
+.buttons-container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.popup-cancel-button {
+  color: #909090;
+  font-family: 'Bree Serif';
+  outline: none;
+  cursor: pointer;
+  border: 2px solid #909090;
+  background-color: transparent;
+  font-size: 18px;
+  padding: 2px 12px;
+  border-radius: 5px;
+}
+
+.popup-logout-button {
+  color: #fff;
+  font-family: 'Bree Serif';
+  outline: none;
+  cursor: pointer;
+  border: none;
+  background-color: #3b82f6;
+  font-size: 18px;
+  padding: 4px 12px;
+  border-radius: 5px;
+}

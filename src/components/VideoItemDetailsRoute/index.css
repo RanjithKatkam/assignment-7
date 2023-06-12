@@ -1,0 +1,25 @@
+.views-date {
+  margin-top: 30px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.channel-logo {
+  width: 30%;
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

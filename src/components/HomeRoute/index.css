@@ -1,0 +1,72 @@
+.home-div {
+  display: flex;
+  height: 88%;
+}
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 83%;
+  height: 100%;
+}
+
+.popup-logo {
+  width: 48%;
+}
+
+.para {
+  font-family: 'Bree serif';
+  font-weight: 500;
+  font-size: 24px;
+  color: #424242;
+  margin-top: 40px;
+}
+
+.get-it-now {
+  color: #424242;
+  font-family: 'Bree Serif';
+  outline: none;
+  cursor: pointer;
+  border: 2px solid #424242;
+  background-color: transparent;
+  font-size: 18px;
+  padding: 4px 12px;
+  border-radius: 5px;
+  margin-top: 35px;
+}
+
+.cross {
+  cursor: pointer;
+}
+
+.search-icon {
+  margin-left: 9px;
+  margin-top: 4px;
+  margin-right: 4px;
+}
+
+.search-button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-left: 1px solid #7e858e;
+  height: 100%;
+}
+
+.thumbnail-image {
+  width: 100%;
+}
+
+.channel-logo {
+  width: 90%;
+}
+
+.channel-profile-container {
+  width: 20%;
+}
+
+.product-failure-image {
+  width: 250px;
+  height: 200px;
+}
