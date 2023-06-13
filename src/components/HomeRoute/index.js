@@ -103,16 +103,13 @@ class HomeRoute extends Component {
               className="popup-logo"
             />
             <p className="para">Buy Nxt Watch Premium prepaid plans with UPI</p>
-            <buttons className="get-it-now" type="button">
+            <button className="get-it-now" type="button">
               GET IT NOW
-            </buttons>
+            </button>
           </div>
-          <AiOutlineClose
-            className="cross"
-            size={25}
-            onClick={this.closePopup}
-            data-testid="close"
-          />
+          <button type="button" onClick={this.closePopup} data-testid="close">
+            <AiOutlineClose className="cross" size={25} />
+          </button>
         </PopupContainer>
         <VideosContainer>
           <InputContainer>

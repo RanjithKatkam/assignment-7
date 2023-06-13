@@ -72,7 +72,7 @@ class App extends Component {
             path="/videos/:id"
             component={VideoItemDetailsRoute}
           />
-          <Route exact path="/not-found" component={NotFoundRoute} />
+          <Route path="/not-found" component={NotFoundRoute} />
           <Redirect to="/not-found" />
         </Switch>
       </NxtWatchContext.Provider>
