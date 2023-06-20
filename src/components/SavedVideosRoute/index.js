@@ -22,44 +22,51 @@ class SavedVideosRoute extends Component {
     return (
       <NxtWatchContext.Consumer>
         {value => {
-          const {savedVideos} = value
+          const {savedVideos, darkMode} = value
           console.log(savedVideos)
 
           return (
-            <SavedMainContainer data-testid="savedVideos">
+            <SavedMainContainer
+              bgColor={darkMode ? '#0f0f0f' : '#f9f9f9'}
+              data-testid="savedVideos"
+            >
               <Header />
               <SavedSubContainer>
                 <SideBar />
                 <div className="content-container">
-                  <div className="container">
-                    <div className="logo-container">
-                      <AiFillSave className="trending-icon" />
-                    </div>
-                    <h1 className="trending-heading">Saved Videos</h1>
-                  </div>
-                  <VideoItemContainer>
-                    {savedVideos.length > 0 ? (
-                      savedVideos.map(eachItem => (
-                        <TrendingVideoCard
-                          direction="row"
-                          details={eachItem}
-                          key={eachItem.id}
-                        />
-                      ))
-                    ) : (
-                      <EmptyViewContainer>
-                        <img
-                          src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-saved-videos-img.png"
-                          alt="no saved videos"
-                          className="no-saved-videos"
-                        />
-                        <NoSavedHeading>No saved videos found</NoSavedHeading>
-                        <NoSavedPara>
-                          You can save your videos while watching them.
-                        </NoSavedPara>
-                      </EmptyViewContainer>
-                    )}
-                  </VideoItemContainer>
+                  {savedVideos.length > 0 ? (
+                    <>
+                      <div className="container">
+                        <div className="logo-container">
+                          <AiFillSave className="trending-icon" />
+                        </div>
+                        <h1 className="trending-heading">Saved Videos</h1>
+                      </div>
+                      <VideoItemContainer
+                        bgColor={darkMode ? '#0f0f0f' : '#f9f9f9'}
+                      >
+                        {savedVideos.map(eachItem => (
+                          <TrendingVideoCard
+                            direction="row"
+                            details={eachItem}
+                            key={eachItem.id}
+                          />
+                        ))}
+                      </VideoItemContainer>
+                    </>
+                  ) : (
+                    <EmptyViewContainer>
+                      <img
+                        src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-saved-videos-img.png"
+                        alt="no saved videos"
+                        className="no-saved-videos"
+                      />
+                      <NoSavedHeading>No saved videos found</NoSavedHeading>
+                      <NoSavedPara>
+                        You can save your videos while watching them.
+                      </NoSavedPara>
+                    </EmptyViewContainer>
+                  )}
                 </div>
               </SavedSubContainer>
             </SavedMainContainer>

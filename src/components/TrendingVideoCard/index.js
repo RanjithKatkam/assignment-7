@@ -23,12 +23,12 @@ const TrendingVideoCard = props => {
     id: details.id,
   }
 
-  const publishedDate = formatDistanceToNow(
-    new Date(modifiedDetails.publishedAt),
-  )
-    .replace(/^about /i, '')
-    .replace(/^over /i, '')
-    .replace(/^almost /i, '')
+  //   const publishedDate = formatDistanceToNow(
+  //     new Date(modifiedDetails.publishedAt),
+  //   )
+  //     .replace(/^about /i, '')
+  //     .replace(/^over /i, '')
+  //     .replace(/^almost /i, '')
 
   return (
     <Link className="link" to={`videos/${modifiedDetails.id}`}>
@@ -45,7 +45,9 @@ const TrendingVideoCard = props => {
           </TrendingChannelName>
           <div className="publish-div">
             <TrendingChannelName>{`${modifiedDetails.viewCount} •`}</TrendingChannelName>
-            <TrendingChannelName>{`${publishedDate} ago`}</TrendingChannelName>
+            <TrendingChannelName>
+              {modifiedDetails.publishedAt}
+            </TrendingChannelName>
           </div>
         </TrendingVideoDetails>
       </TrendingVideoCardMainContainer>

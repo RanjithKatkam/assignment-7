@@ -22,12 +22,12 @@ const VideoCard = props => {
     id: details.id,
   }
 
-  const publishedDate = formatDistanceToNow(
-    new Date(modifiedDetails.publishedAt),
-  )
-    .replace(/^about /i, '')
-    .replace(/^over /i, '')
-    .replace(/^almost /i, '')
+  //   const publishedDate = formatDistanceToNow(
+  //     new Date(modifiedDetails.publishedAt),
+  //   )
+  //     .replace(/^about /i, '')
+  //     .replace(/^over /i, '')
+  //     .replace(/^almost /i, '')
 
   return (
     <Link className="link" to={`videos/${modifiedDetails.id}`}>
@@ -48,7 +48,10 @@ const VideoCard = props => {
           <div>
             <Title>{modifiedDetails.title}</Title>
             <ChannelName>{modifiedDetails.channelName}</ChannelName>
-            <ChannelName>{`${modifiedDetails.viewCount} • ${publishedDate} ago`}</ChannelName>
+            <div className="publish-div">
+              <ChannelName>{`${modifiedDetails.viewCount} •`}</ChannelName>
+              <ChannelName>{modifiedDetails.publishedAt}</ChannelName>
+            </div>
           </div>
         </VideoDetails>
       </VideoCardMainContainer>

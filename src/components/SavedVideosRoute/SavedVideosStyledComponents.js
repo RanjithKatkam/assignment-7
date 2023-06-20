@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const SavedMainContainer = styled.div`
   height: 100vh;
-  background-color: #f1f1f1;
+  background-color: ${props => props.bgColor};
 `
 export const SavedSubContainer = styled.div`
   height: 88%;
@@ -14,7 +14,7 @@ export const VideoItemContainer = styled.ul`
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  background-color: #f1f5f9;
+  background-color: ${props => props.bgColor};
 `
 export const EmptyViewContainer = styled.div`
   height: 100%;

@@ -23,3 +23,10 @@
   outline: none;
   cursor: pointer;
 }
+
+.publish-divs {
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const GamingMainContainer = styled.div`
   height: 100vh;
-  background-color: #f1f1f1;
+  background-color: ${props => props.bgColor};
 `
 export const GamingSubContainer = styled.div`
   height: 88%;
@@ -14,7 +14,14 @@ export const VideoItemContainer = styled.ul`
   flex-wrap: wrap;
   padding-right: 35px;
   width: 100%;
-  background-color: #f1f5f9;
+  background-color: ${props => props.bgColor};
+`
+
+export const ContentContainer = styled.div`
+  height: 100%;
+  overflow: auto;
+  width: 100%;
+  background-color: ${props => props.bgColor};
 `
 
 export const GamingFailureMainContainer = styled.div`
@@ -25,6 +32,7 @@ export const GamingFailureMainContainer = styled.div`
   margin-top: 48px;
   padding-bottom: 64px;
   width: 100%;
+  background-color: ${props => props.bgColor};
 `
 
 export const GamingFailureHeading = styled.h1`

@@ -170,7 +170,10 @@ class VideoItemDetailsRoute extends Component {
             </div>
             <VideoTitle>{title}</VideoTitle>
             <div className="views-date">
-              <ViewAndData>{`${viewCount} • ${publishedDate} ago`}</ViewAndData>
+              <div className="publish-divs">
+                <ViewAndData>{`${viewCount} • `}</ViewAndData>
+                <ViewAndData>{publishedAt}</ViewAndData>
+              </div>
               <div className="buttons-container">
                 <button
                   onClick={this.onClickLikeButton}
@@ -194,7 +197,7 @@ class VideoItemDetailsRoute extends Component {
                     size={25}
                   />
 
-                  <Dislike color={isLiked ? '#2563eb' : '#64748b'}>
+                  <Dislike color={isDisliked ? '#2563eb' : '#64748b'}>
                     Dislike
                   </Dislike>
                 </button>
@@ -248,13 +251,13 @@ class VideoItemDetailsRoute extends Component {
         const {darkMode} = value
         const themeImage = darkMode
           ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png'
-          : 'https://assets.ccbp.in/frontend/react-js/nxt-trendz/nxt-trendz-products-error-view.png'
+          : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png'
         return (
           <VideoDetailsFailureMainContainer>
             <img
               src={themeImage}
               alt="failure view"
-              className="products-failure-img"
+              className="product-failure-image"
             />
             <VideoDetailsFailureHeading>
               Oops! Something Went Wrong
@@ -298,7 +301,7 @@ class VideoItemDetailsRoute extends Component {
           const {darkMode} = value
           return (
             <VideoDetailsMainContainer
-              bgColor={darkMode ? '#0f0f0f' : '#f1f1f1'}
+              bgColor={darkMode ? '#0f0f0f' : '#f9f9f9'}
               data-testid="videoItemDetails"
             >
               <Header />

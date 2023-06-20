@@ -21,6 +21,7 @@ export const PopupContainer = styled.div`
   width: 100%;
   display: ${props => (props.display ? 'flex' : 'none')};
   justify-content: space-between;
+  align-items: flex-start;
   padding: 30px;
   background-image: url('https://assets.ccbp.in/frontend/react-js/nxt-watch-banner-bg.png');
   background-size: cover;

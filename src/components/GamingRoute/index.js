@@ -12,11 +12,13 @@ import {
   GamingFailureDescription,
   GamingRetryButton,
   GamingHeading,
+  ContentContainer,
 } from './GamingRouteStyledComponents'
 
 import Header from '../Header'
 import SideBar from '../SideBar'
 import GamingVideoCard from '../GamingVideoCard'
+import NxtWatchContext from '../../NxtWatchContext'
 import './index.css'
 
 const apiStatusConstants = {
@@ -64,19 +66,30 @@ class GamingRoute extends Component {
   renderSuccessView = () => {
     const {videosList} = this.state
     return (
-      <div className="content-container">
-        <div className="container">
-          <div className="logo-container">
-            <AiFillHeart className="trending-icon" />
-          </div>
-          <GamingHeading>Gaming</GamingHeading>
-        </div>
-        <VideoItemContainer>
-          {videosList.map(eachItem => (
-            <GamingVideoCard details={eachItem} key={eachItem.id} />
-          ))}
-        </VideoItemContainer>
-      </div>
+      <NxtWatchContext.Consumer>
+        {value => {
+          const {darkMode} = value
+
+          return (
+            <ContentContainer
+              data-testid="gaming"
+              bgColor={darkMode ? '#0f0f0f' : '#f9f9f9'}
+            >
+              <div className="container">
+                <div className="logo-container">
+                  <AiFillHeart className="trending-icon" />
+                </div>
+                <h1>Gaming</h1>
+              </div>
+              <VideoItemContainer bgColor={darkMode ? '#0f0f0f' : '#f9f9f9'}>
+                {videosList.map(eachItem => (
+                  <GamingVideoCard details={eachItem} key={eachItem.id} />
+                ))}
+              </VideoItemContainer>
+            </ContentContainer>
+          )
+        }}
+      </NxtWatchContext.Consumer>
     )
   }
 
@@ -87,14 +100,16 @@ class GamingRoute extends Component {
   )
 
   renderFailureView = () => (
-    <GamingFailureMainContainer>
+    <NxtWatchContext.Consumer>
       {value => {
         const {darkMode} = value
         const themeImage = darkMode
           ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png'
-          : 'https://assets.ccbp.in/frontend/react-js/nxt-trendz/nxt-trendz-products-error-view.png'
+          : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png'
         return (
-          <GamingFailureMainContainer>
+          <GamingFailureMainContainer
+            bgColor={darkMode ? '#0f0f0f' : '#f9f9f9'}
+          >
             <img
               src={themeImage}
               alt="failure view"
@@ -113,7 +128,7 @@ class GamingRoute extends Component {
           </GamingFailureMainContainer>
         )
       }}
-    </GamingFailureMainContainer>
+    </NxtWatchContext.Consumer>
   )
 
   retryGamingItems = () => {
@@ -137,13 +152,20 @@ class GamingRoute extends Component {
 
   render() {
     return (
-      <GamingMainContainer>
-        <Header />
-        <GamingSubContainer>
-          <SideBar />
-          {this.renderGamingRoute()}
-        </GamingSubContainer>
-      </GamingMainContainer>
+      <NxtWatchContext.Consumer>
+        {value => {
+          const {darkMode} = value
+          return (
+            <GamingMainContainer bgColor={darkMode ? '#0f0f0f' : '#f9f9f9'}>
+              <Header />
+              <GamingSubContainer>
+                <SideBar />
+                {this.renderGamingRoute()}
+              </GamingSubContainer>
+            </GamingMainContainer>
+          )
+        }}
+      </NxtWatchContext.Consumer>
     )
   }
 }

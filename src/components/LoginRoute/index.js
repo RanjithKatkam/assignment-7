@@ -69,7 +69,7 @@ class LoginRoute extends Component {
       showSubmitMsg,
       showPassword,
     } = this.state
-    const jwtToken = Cookies.get('jwtToken')
+    const jwtToken = Cookies.get('jwt_token')
 
     if (jwtToken !== undefined) {
       return <Redirect to="/" />

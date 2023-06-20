@@ -87,7 +87,7 @@ class HomeRoute extends Component {
   }
 
   closePopup = () => {
-    this.setState({displayPopup: false}, this.renderSuccessView)
+    this.setState({displayPopup: false})
   }
 
   renderSuccessView = () => {
@@ -107,7 +107,12 @@ class HomeRoute extends Component {
               GET IT NOW
             </button>
           </div>
-          <button type="button" onClick={this.closePopup} data-testid="close">
+          <button
+            className="pop-button"
+            type="button"
+            onClick={this.closePopup}
+            data-testid="close"
+          >
             <AiOutlineClose className="cross" size={25} />
           </button>
         </PopupContainer>
@@ -164,7 +169,7 @@ class HomeRoute extends Component {
         const {darkMode} = value
         const themeImage = darkMode
           ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png'
-          : 'https://assets.ccbp.in/frontend/react-js/nxt-trendz/nxt-trendz-products-error-view.png'
+          : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png'
         return (
           <FailureMainContainer>
             <img
@@ -218,7 +223,7 @@ class HomeRoute extends Component {
           return (
             <MainContainer
               data-testid="home"
-              bgColor={darkMode ? '#181818' : '#ebebeb'}
+              bgColor={darkMode ? '#181818' : '#f9f9f9'}
             >
               <Header />
               <div className="home-div">

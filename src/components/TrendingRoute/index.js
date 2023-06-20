@@ -75,7 +75,7 @@ class TrendingRoute extends Component {
                 </div>
                 <TrendingHeading>Trending</TrendingHeading>
               </div>
-              <VideoItemContainer bgColor={darkMode ? '#0f0f0f' : '#f1f5f9'}>
+              <VideoItemContainer bgColor={darkMode ? '#0f0f0f' : '#f9f9f9'}>
                 {videoList.map(eachItem => (
                   <TrendingVideoCard
                     direction="row"
@@ -103,13 +103,13 @@ class TrendingRoute extends Component {
         const {darkMode} = value
         const themeImage = darkMode
           ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png'
-          : 'https://assets.ccbp.in/frontend/react-js/nxt-trendz/nxt-trendz-products-error-view.png'
+          : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png'
         return (
           <TrendingFailureMainContainer>
             <img
               src={themeImage}
               alt="failure view"
-              className="products-failure-img"
+              className="product-failure-image"
             />
             <TrendingFailureHeading>
               Oops! Something Went Wrong
@@ -154,8 +154,8 @@ class TrendingRoute extends Component {
 
           return (
             <TrendingMainContainer
-              data-testid="savedVideos"
-              bgColor={darkMode ? '#0f0f0f' : '#f1f1f1'}
+              data-testid="trending"
+              bgColor={darkMode ? '#0f0f0f' : '#f9f9f9'}
             >
               <Header />
               <TrendingSubContainer>

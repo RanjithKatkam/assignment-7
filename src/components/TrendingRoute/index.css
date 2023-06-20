@@ -35,3 +35,8 @@
   font-family: 'Bree Serif';
   margin-left: 30px;
 }
+
+.product-failure-image {
+  width: 250px;
+  height: 200px;
+}

@@ -40,23 +40,27 @@ const Header = props => {
             </div>
             <SubContainer>
               {darkMode ? (
-                <button
-                  onClick={changeTheme}
-                  data-testid="theme"
-                  className="theme-button"
-                  type="button"
-                >
-                  <BiSun className="sun" />
-                </button>
+                <li>
+                  <button
+                    onClick={changeTheme}
+                    data-testid="theme"
+                    className="theme-button"
+                    type="button"
+                  >
+                    <BiSun className="sun" />
+                  </button>
+                </li>
               ) : (
-                <button
-                  onClick={changeTheme}
-                  data-testid="theme"
-                  className="theme-button"
-                  type="button"
-                >
-                  <FaMoon className="moon" />
-                </button>
+                <li>
+                  <button
+                    onClick={changeTheme}
+                    data-testid="theme"
+                    className="theme-button"
+                    type="button"
+                  >
+                    <FaMoon className="moon" />
+                  </button>
+                </li>
               )}
               <img
                 src="https://assets.ccbp.in/frontend/react-js/nxt-watch-profile-img.png"
@@ -64,7 +68,7 @@ const Header = props => {
                 className="profile"
               />
               <Popup
-                model
+                modal
                 trigger={
                   <button
                     className={

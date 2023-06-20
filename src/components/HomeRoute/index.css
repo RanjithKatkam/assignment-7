@@ -23,6 +23,13 @@
   margin-top: 40px;
 }
 
+.pop-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
 .get-it-now {
   color: #424242;
   font-family: 'Bree Serif';
