@@ -15,6 +15,10 @@ export const VideoItemContainer = styled.ul`
   justify-content: space-between;
   width: 100%;
   background-color: ${props => props.bgColor};
+  @media (max-width: 768px) {
+    padding: 10px;
+    align-items: center;
+  }
 `
 
 export const TrendingFailureMainContainer = styled.div`
@@ -56,9 +60,12 @@ export const TrendingRetryButton = styled.button`
 `
 
 export const TrendingHeading = styled.h1`
-  color: #000;
+  color: ${props => props.color};
   font-weight: bold;
   font-size: 40px;
   font-family: 'Bree Serif';
   margin-left: 30px;
+  @media (max-width: 768px) {
+    font-size: 25px;
+  }
 `

@@ -15,6 +15,10 @@ export const VideoItemContainer = styled.ul`
   padding-right: 35px;
   width: 100%;
   background-color: ${props => props.bgColor};
+  @media (max-width: 768px) {
+    padding: 5px;
+    justify-content: space-around;
+  }
 `
 
 export const ContentContainer = styled.div`
@@ -63,9 +67,12 @@ export const GamingRetryButton = styled.button`
   border-radius: 5px;
 `
 export const GamingHeading = styled.h1`
-  color: #000;
+  color: ${props => props.color};
   font-weight: bold;
   font-size: 40px;
   font-family: 'Bree Serif';
   margin-left: 30px;
+  @media (max-width: 768px) {
+    font-size: 25px;
+  }
 `

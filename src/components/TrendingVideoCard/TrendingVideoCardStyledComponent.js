@@ -5,17 +5,25 @@ export const TrendingVideoCardMainContainer = styled.li`
   height: 350px;
   width: 90%;
   margin: 20px 0px;
-  box-shadow: 6px 13px 6px 9px rgba(0, 0, 0, 0.3);
+  box-shadow: ${props => props.shadow};
   display: flex;
-  background-color: #fff;
+  background-color: ${props => props.bgColor};
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+  }
 `
 export const TrendingTitle = styled.p`
-  color: #313131;
+  color: ${props => props.color};
   font-family: 'Arial Narrow Bold', sans-serif;
   font-size: 25px;
   margin-top: 0px;
   margin-left: 10px;
   width: 95%;
+  @media (max-width: 768px) {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
 `
 
 export const TrendingVideoDetails = styled.div`
@@ -26,9 +34,13 @@ export const TrendingVideoDetails = styled.div`
 `
 
 export const TrendingChannelName = styled.p`
-  color: #606060;
+  color: ${props => props.color};
   font-family: 'Roboto';
   font-size: 15px;
   margin-left: 10px;
   font-weight: 500;
+  @media (max-width: 768px) {
+    margin-bottom: 6px;
+    margin-top: 8px;
+  }
 `

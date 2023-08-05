@@ -8,8 +8,12 @@ export const SideBarMainContainer = styled.div`
   width: 15%;
   background-color: ${props => props.bgColor};
   padding-top: 20px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
-export const Headings = styled.h1`
+export const Headings = styled.p`
   color: ${props => props.Color};
   font-family: 'Bree Serif';
   font-weight: 500;
@@ -34,5 +38,6 @@ export const Para = styled.p`
   color: ${props => props.color};
   font-family: serif;
   font-weight: 500;
-  font-size: 19px;
+  font-size: 17px;
+  width: 95%;
 `

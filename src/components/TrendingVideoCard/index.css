@@ -6,3 +6,9 @@
   display: flex;
   align-items: center;
 }
+
+@media (max-width: 768px) {
+  .trending-thumbnail-image {
+    width: 100%;
+  }
+}

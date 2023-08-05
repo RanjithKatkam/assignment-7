@@ -20,6 +20,7 @@
 
 .profile {
   width: 18%;
+  margin-bottom: 6px;
 }
 
 .light-logout-button {
@@ -32,6 +33,7 @@
   font-size: 18px;
   padding: 2px 12px 3px 12px;
   border-radius: 5px;
+  margin-bottom: 6px;
 }
 
 .dark-logout-button {
@@ -44,6 +46,7 @@
   font-size: 18px;
   padding: 2px 12px 3px 12px;
   border-radius: 5px;
+  margin-bottom: 6px;
 }
 
 .popup-container {
@@ -61,6 +64,19 @@
   border-radius: 10px;
 }
 
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .popup-heading {
   color: #00306e;
   font-family: 'Bree Serif';
@@ -68,7 +84,7 @@
 }
 
 .buttons-container {
-  width: 50%;
+  width: 60%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -84,6 +100,7 @@
   font-size: 18px;
   padding: 2px 12px;
   border-radius: 5px;
+  margin-right: auto;
 }
 
 .popup-logout-button {
@@ -96,4 +113,76 @@
   font-size: 18px;
   padding: 4px 12px;
   border-radius: 5px;
+}
+
+.toggleMenu {
+  background-color: gainsboro;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 0px;
+}
+
+.toggleButtons {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  font-family: 'Bree Serif';
+  font-weight: 500;
+}
+
+.logout {
+  display: block;
+}
+.logout-icon {
+  display: none;
+}
+.menu-icon {
+  display: none;
+}
+.logout-icon-popup {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header-logo {
+    width: 37%;
+  }
+  .profile {
+    display: none;
+  }
+  .sun {
+    font-size: 25px;
+  }
+  .moon {
+    font-size: 25px;
+  }
+  .logout {
+    display: none;
+  }
+  .logout-icon {
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 26px;
+    border: none;
+    display: block;
+  }
+  .menu-icon {
+    display: block;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 26px;
+    border: none;
+  }
+  .logout-icon-popup {
+    display: block;
+  }
+
+  .logout-button-popup {
+    display: none;
+  }
 }

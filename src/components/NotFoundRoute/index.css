@@ -1,0 +1,13 @@
+.not-found-heading {
+  color: #000;
+  font-family: 'Bree Serif';
+  font-size: 30px;
+  text-align: center;
+}
+.not-found-para {
+  color: #000;
+  font-family: 'Bree Serif';
+  font-size: 20px;
+  text-align: center;
+  font-weight: 400;
+}

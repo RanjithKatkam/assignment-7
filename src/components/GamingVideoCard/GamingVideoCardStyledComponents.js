@@ -5,12 +5,18 @@ export const VideoCardMainContainer = styled.li`
   height: 380px;
   width: 250px;
   margin: 20px;
-  box-shadow: 10px 6px 9px rgba(0, 0, 0, 0.6);
+  box-shadow: ${props => props.shadow};
   border-radius: 8px;
+  background-color: ${props => props.bgColor};
+  @media (max-width: 768px) {
+    margin: 20px 0px;
+    height: 280px;
+    width: 150px;
+  }
 `
 
 export const GamingTitle = styled.p`
-  color: #313131;
+  color: ${props => props.color};
   font-family: 'Roboto';
   font-size: 15px;
   margin-top: 0px;
@@ -25,7 +31,7 @@ export const GamingVideoDetails = styled.div`
 `
 
 export const GamingWatching = styled.p`
-  color: #606060;
+  color: ${props => props.color};
   font-family: 'Roboto';
   font-size: 15px;
   margin-left: 6px;

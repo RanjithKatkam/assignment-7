@@ -4,14 +4,16 @@ export const VideoCardMainContainer = styled.li`
   list-style-type: none;
   height: 350px;
   width: 350px;
-  //   background-color: lightgreen;
   margin: 20px 0px;
-  box-shadow: 10px 6px 9px rgba(0, 0, 0, 0.6);
+  box-shadow: ${props => props.shadow};
   border-radius: 8px;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `
 
 export const Title = styled.p`
-  color: #313131;
+  color: ${props => props.color};
   font-family: 'Roboto';
   font-size: 15px;
   margin-top: 0px;
@@ -25,7 +27,7 @@ export const VideoDetails = styled.div`
 `
 
 export const ChannelName = styled.p`
-  color: #606060;
+  color: ${props => props.color};
   font-family: 'Roboto';
   font-size: 15px;
   margin-left: 10px;

@@ -8,6 +8,7 @@ export const MainContainer = styled.div`
   align-items: center;
   background-color: #f4f4f4;
 `
+
 export const FormContainer = styled.form`
   display: flex;
   height: 60%;
@@ -17,6 +18,9 @@ export const FormContainer = styled.form`
   padding: 30px;
   width: 30%;
   border-radius: 10px;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `
 export const InputContainer = styled.div`
   display: ${props => props.display};

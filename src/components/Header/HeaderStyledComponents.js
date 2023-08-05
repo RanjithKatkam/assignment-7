@@ -8,11 +8,19 @@ export const HeaderMainContainer = styled.div`
   height: 12%;
   width: 100%;
   background-color: ${props => props.bgColor};
+  @media (max-width: 768px) {
+    padding: 10px 20px;
+    // background-color: grey;
+  }
 `
 
 export const SubContainer = styled.ul`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  list-style: none;
   width: 16%;
+  @media (max-width: 768px) {
+    width: 60%;
+  }
 `

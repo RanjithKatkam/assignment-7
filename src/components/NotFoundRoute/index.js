@@ -4,6 +4,7 @@ import {
   FailuresContainer,
   NotFoundImage,
 } from './NotFoundStyledComponents'
+import './index.css'
 
 const NotFoundRoute = () => (
   <NxtWatchContext.Consumer>
@@ -17,8 +18,10 @@ const NotFoundRoute = () => (
         <NotFoundMainContainer>
           <FailuresContainer>
             <NotFoundImage src={themeImage} alt="not found" />
-            <h1>Page Not Found</h1>
-            <p>We are sorry, the page you requested could not be found.</p>
+            <h1 className="not-found-heading">Page Not Found</h1>
+            <p className="not-found-para">
+              We are sorry, the page you requested could not be found.
+            </p>
           </FailuresContainer>
         </NotFoundMainContainer>
       )

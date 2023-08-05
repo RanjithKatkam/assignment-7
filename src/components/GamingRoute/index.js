@@ -11,8 +11,8 @@ import {
   GamingFailureHeading,
   GamingFailureDescription,
   GamingRetryButton,
-  GamingHeading,
   ContentContainer,
+  GamingHeading,
 } from './GamingRouteStyledComponents'
 
 import Header from '../Header'
@@ -75,11 +75,13 @@ class GamingRoute extends Component {
               data-testid="gaming"
               bgColor={darkMode ? '#0f0f0f' : '#f9f9f9'}
             >
-              <div className="container">
+              <div className={darkMode ? 'container-darkMode' : 'container'}>
                 <div className="logo-container">
                   <AiFillHeart className="trending-icon" />
                 </div>
-                <h1>Gaming</h1>
+                <GamingHeading color={darkMode ? '#f0f8fa' : '#000000'}>
+                  Gaming
+                </GamingHeading>
               </div>
               <VideoItemContainer bgColor={darkMode ? '#0f0f0f' : '#f9f9f9'}>
                 {videosList.map(eachItem => (

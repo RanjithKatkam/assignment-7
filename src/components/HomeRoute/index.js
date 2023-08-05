@@ -94,72 +94,88 @@ class HomeRoute extends Component {
     const {videosList, displayPopup, searchInput} = this.state
 
     return (
-      <HomeRouteMainContainer>
-        <PopupContainer data-testid="banner" display={displayPopup}>
-          <div>
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
-              alt="nxt watch logo"
-              className="popup-logo"
-            />
-            <p className="para">Buy Nxt Watch Premium prepaid plans with UPI</p>
-            <button className="get-it-now" type="button">
-              GET IT NOW
-            </button>
-          </div>
-          <button
-            className="pop-button"
-            type="button"
-            onClick={this.closePopup}
-            data-testid="close"
-          >
-            <AiOutlineClose className="cross" size={25} />
-          </button>
-        </PopupContainer>
-        <VideosContainer>
-          <InputContainer>
-            <Input
-              onChange={this.onChangeSearchInput}
-              onKeyDown={this.onEnterKeyDown}
-              value={searchInput}
-              placeholder="Search"
-              type="search"
-            />
-            <button
-              onClick={this.onClickSearchButton}
-              className="search-button"
-              type="button"
-              data-testid="searchButton"
-            >
-              <AiOutlineSearch size={22} className="search-icon" />
-            </button>
-          </InputContainer>
-          <ItemContainer>
-            {videosList.length > 0 ? (
-              videosList.map(eachItem => (
-                <VideoCard
-                  direction="column"
-                  details={eachItem}
-                  key={eachItem.id}
-                />
-              ))
-            ) : (
-              <EmptySearchViewContainer>
-                <img
-                  src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-search-results-img.png"
-                  alt="no videos"
-                  className="no-saved-videos"
-                />
-                <NoVideosHeading>No search results found</NoVideosHeading>
-                <NoVideosPara>
-                  Try different key words or remove search filter.
-                </NoVideosPara>
-                <RetryButton onClick={this.retryItems}>Retry</RetryButton>
-              </EmptySearchViewContainer>
-            )}
-          </ItemContainer>
-        </VideosContainer>
-      </HomeRouteMainContainer>
+      <NxtWatchContext.Consumer>
+        {value => {
+          const {darkMode} = value
+          return (
+            <HomeRouteMainContainer>
+              {displayPopup && (
+                <PopupContainer data-testid="banner">
+                  <div>
+                    <img
+                      src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
+                      alt="nxt watch logo"
+                      className="popup-logo"
+                    />
+                    <p className="para">
+                      Buy Nxt Watch Premium prepaid plans with UPI
+                    </p>
+                    <button className="get-it-now" type="button">
+                      GET IT NOW
+                    </button>
+                  </div>
+                  <button
+                    className="pop-button"
+                    type="button"
+                    onClick={this.closePopup}
+                    data-testid="close"
+                  >
+                    <AiOutlineClose className="cross" size={25} />
+                  </button>
+                </PopupContainer>
+              )}
+              <VideosContainer>
+                <InputContainer>
+                  <Input
+                    className={darkMode ? 'input-container-darkMode' : null}
+                    onChange={this.onChangeSearchInput}
+                    onKeyDown={this.onEnterKeyDown}
+                    value={searchInput}
+                    placeholder="Search"
+                    type="search"
+                  />
+                  <button
+                    onClick={this.onClickSearchButton}
+                    className="search-button"
+                    type="button"
+                    data-testid="searchButton"
+                  >
+                    <AiOutlineSearch
+                      color={darkMode ? '#909090' : null}
+                      size={22}
+                      className="search-icon"
+                    />
+                  </button>
+                </InputContainer>
+                <ItemContainer>
+                  {videosList.length > 0 ? (
+                    videosList.map(eachItem => (
+                      <VideoCard
+                        direction="column"
+                        details={eachItem}
+                        key={eachItem.id}
+                      />
+                    ))
+                  ) : (
+                    <EmptySearchViewContainer>
+                      <img
+                        src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-search-results-img.png"
+                        alt="no videos"
+                        className="no-saved-videos"
+                      />
+                      <NoVideosHeading>No search results found</NoVideosHeading>
+                      <NoVideosPara>
+                        Try different key words or remove search filter.
+                      </NoVideosPara>
+                      <RetryButton onClick={this.retryItems}>Retry</RetryButton>
+                    </EmptySearchViewContainer>
+                  )}
+                </ItemContainer>
+              </VideosContainer>
+            </HomeRouteMainContainer>
+          )
+        }}
+      </NxtWatchContext.Consumer>
     )
   }
 

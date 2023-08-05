@@ -10,6 +10,7 @@ import {
   EmptyViewContainer,
   NoSavedHeading,
   NoSavedPara,
+  SavedVideosHeading,
 } from './SavedVideosStyledComponents'
 import TrendingVideoCard from '../TrendingVideoCard'
 
@@ -36,11 +37,19 @@ class SavedVideosRoute extends Component {
                 <div className="content-container">
                   {savedVideos.length > 0 ? (
                     <>
-                      <div className="container">
+                      <div
+                        className={
+                          darkMode ? 'container-darkMode' : 'container'
+                        }
+                      >
                         <div className="logo-container">
                           <AiFillSave className="trending-icon" />
                         </div>
-                        <h1 className="trending-heading">Saved Videos</h1>
+                        <SavedVideosHeading
+                          color={darkMode ? '#f0f8fa' : '#000000'}
+                        >
+                          Saved Videos
+                        </SavedVideosHeading>
                       </div>
                       <VideoItemContainer
                         bgColor={darkMode ? '#0f0f0f' : '#f9f9f9'}
@@ -61,8 +70,10 @@ class SavedVideosRoute extends Component {
                         alt="no saved videos"
                         className="no-saved-videos"
                       />
-                      <NoSavedHeading>No saved videos found</NoSavedHeading>
-                      <NoSavedPara>
+                      <NoSavedHeading color={darkMode ? '#f8fbfd' : '#1c293a'}>
+                        No saved videos found
+                      </NoSavedHeading>
+                      <NoSavedPara color={darkMode ? '#cfedf7' : '#666885'}>
                         You can save your videos while watching them.
                       </NoSavedPara>
                     </EmptyViewContainer>

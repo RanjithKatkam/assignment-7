@@ -19,12 +19,16 @@ export const HomeRouteMainContainer = styled.div`
 export const PopupContainer = styled.div`
   height: 40%;
   width: 100%;
-  display: ${props => (props.display ? 'flex' : 'none')};
+  display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 30px;
   background-image: url('https://assets.ccbp.in/frontend/react-js/nxt-watch-banner-bg.png');
   background-size: cover;
+  @media (max-width: 768px) {
+    background-color: lightcyan;
+    background-image: none;
+  }
 `
 export const VideosContainer = styled.div`
   height: 100%;
@@ -32,10 +36,13 @@ export const VideosContainer = styled.div`
 `
 export const Input = styled.input`
   height: 100%;
-  width: 270px;
+  width: 280px;
   padding-left: 10px;
   border: none;
   outline: none;
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 `
 export const InputContainer = styled.div`
   display: flex;
@@ -45,6 +52,10 @@ export const InputContainer = styled.div`
   border: 1px solid #7e858e;
   outline: none;
   margin: 30px 0px 0px 39px;
+  @media (max-width: 768px) {
+    width: 90%;
+    margin-left: 12px;
+  }
 `
 
 export const ItemContainer = styled.ul`
@@ -53,6 +64,11 @@ export const ItemContainer = styled.ul`
   flex-wrap: wrap;
   justify-content: space-between;
   padding-right: 35px;
+  @media (max-width: 768px) {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 export const FailureMainContainer = styled.div`

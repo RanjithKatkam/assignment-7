@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import {AiFillHome, AiFillFire, AiFillHeart, AiFillSave} from 'react-icons/ai'
 import NxtWatchContext from '../../NxtWatchContext'
 import {
@@ -13,10 +13,12 @@ import './index.css'
 
 class SideBar extends Component {
   render() {
+    const {location} = this.props
+
     return (
       <NxtWatchContext.Consumer>
         {value => {
-          const {darkMode, activeTab, onChangeActiveTab} = value
+          const {darkMode, onChangeActiveTab} = value
 
           const onChangeHomeTab = () => {
             onChangeActiveTab('Home')
@@ -40,19 +42,24 @@ class SideBar extends Component {
                 <Link className="link" to="/">
                   <Div
                     bgColor={
-                      darkMode && activeTab === 'Home' ? '#606060' : null
+                      darkMode && location.pathname === '/' ? '#606060' : null
                     }
-                    className={activeTab === 'Home' ? 'active' : null}
+                    className={location.pathname === '/' ? 'active' : null}
                     onClick={onChangeHomeTab}
                   >
                     <AiFillHome
-                      className={activeTab === 'Home' ? 'icon1' : 'icon'}
+                      className={location.pathname === '/' ? 'icon1' : 'icon'}
                     />
                     <Headings
                       Color={
-                        darkMode && activeTab === 'Home'
+                        darkMode && location.pathname === '/'
                           ? ' #f9f9f9'
                           : '#606060'
+                      }
+                      className={
+                        darkMode && (location.pathname === '/') === false
+                          ? 'sidebar-heading'
+                          : null
                       }
                     >
                       Home
@@ -62,19 +69,31 @@ class SideBar extends Component {
                 <Link className="link" to="/trending">
                   <Div
                     bgColor={
-                      darkMode && activeTab === 'Trending' ? '#606060' : null
+                      darkMode && location.pathname === '/trending'
+                        ? '#606060'
+                        : null
                     }
-                    className={activeTab === 'Trending' ? 'active' : null}
+                    className={
+                      location.pathname === '/trending' ? 'active' : null
+                    }
                     onClick={onChangeTrendingTab}
                   >
                     <AiFillFire
-                      className={activeTab === 'Trending' ? 'icon1' : 'icon'}
+                      className={
+                        location.pathname === '/trending' ? 'icon1' : 'icon'
+                      }
                     />
                     <Headings
                       Color={
-                        darkMode && activeTab === 'Trending'
+                        darkMode && location.pathname === '/trending'
                           ? ' #f9f9f9'
                           : '#606060'
+                      }
+                      className={
+                        darkMode &&
+                        (location.pathname === '/trending') === false
+                          ? 'sidebar-heading'
+                          : null
                       }
                     >
                       Trending
@@ -84,19 +103,30 @@ class SideBar extends Component {
                 <Link className="link" to="/gaming">
                   <Div
                     bgColor={
-                      darkMode && activeTab === 'Gaming' ? '#606060' : null
+                      darkMode && location.pathname === '/gaming'
+                        ? '#606060'
+                        : null
                     }
-                    className={activeTab === 'Gaming' ? 'active' : null}
+                    className={
+                      location.pathname === '/gaming' ? 'active' : null
+                    }
                     onClick={onChangeGamingTab}
                   >
                     <AiFillHeart
-                      className={activeTab === 'Gaming' ? 'icon1' : 'icon'}
+                      className={
+                        location.pathname === '/gaming' ? 'icon1' : 'icon'
+                      }
                     />
                     <Headings
                       Color={
-                        darkMode && activeTab === 'Gaming'
+                        darkMode && location.pathname === '/gaming'
                           ? ' #f9f9f9'
                           : '#606060'
+                      }
+                      className={
+                        darkMode && (location.pathname === '/gaming') === false
+                          ? 'sidebar-heading'
+                          : null
                       }
                     >
                       Gaming
@@ -106,19 +136,31 @@ class SideBar extends Component {
                 <Link className="link" to="/saved-videos">
                   <Div
                     bgColor={
-                      darkMode && activeTab === 'Saved' ? '#606060' : null
+                      darkMode && location.pathname === '/saved-videos'
+                        ? '#606060'
+                        : null
                     }
-                    className={activeTab === 'Saved' ? 'active' : null}
+                    className={
+                      location.pathname === '/saved-videos' ? 'active' : null
+                    }
                     onClick={onChangeSavedTab}
                   >
                     <AiFillSave
-                      className={activeTab === 'Saved' ? 'icon1' : 'icon'}
+                      className={
+                        location.pathname === '/saved-videos' ? 'icon1' : 'icon'
+                      }
                     />
                     <Headings
                       Color={
-                        darkMode && activeTab === 'Saved'
+                        darkMode && location.pathname === '/saved-videos'
                           ? ' #f9f9f9'
                           : '#606060'
+                      }
+                      className={
+                        darkMode &&
+                        (location.pathname === '/saved-videos') === false
+                          ? 'sidebar-heading'
+                          : null
                       }
                     >
                       Saved Videos
@@ -159,4 +201,4 @@ class SideBar extends Component {
   }
 }
 
-export default SideBar
+export default withRouter(SideBar)

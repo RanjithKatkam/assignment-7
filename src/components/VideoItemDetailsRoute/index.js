@@ -1,5 +1,4 @@
 import {Component} from 'react'
-import {formatDistanceToNow} from 'date-fns'
 
 import {RiPlayListAddFill} from 'react-icons/ri'
 import {
@@ -50,7 +49,6 @@ class VideoItemDetailsRoute extends Component {
     responseVideoDetails: '',
     isLiked: false,
     isDisliked: false,
-    isSaved: false,
     apiStatus: apiStatusConstants.initial,
   }
 
@@ -92,6 +90,7 @@ class VideoItemDetailsRoute extends Component {
         responseVideoDetails: responseData.video_details,
         apiStatus: apiStatusConstants.success,
       })
+      console.log(updatedData, responseData)
     } else {
       this.setState({apiStatus: apiStatusConstants.failed})
     }
@@ -118,7 +117,6 @@ class VideoItemDetailsRoute extends Component {
           videoDetails,
           responseVideoDetails,
           isLiked,
-          isSaved,
           isDisliked,
         } = this.state
         const {
@@ -131,36 +129,27 @@ class VideoItemDetailsRoute extends Component {
           channelName,
           publishedAt,
           id,
-          saved,
         } = videoDetails
 
-        const publishedDate = formatDistanceToNow(new Date(publishedAt))
-          .replace(/^about /i, '')
-          .replace(/^over /i, '')
-          .replace(/^almost /i, '')
+        const {
+          onSaveVideoDetails,
+          darkMode,
+          savedVideos,
+          onRemoveVideoDetails,
+        } = value
+        const result = savedVideos.find(eachItem => eachItem.id === id)
 
-        const {onSaveVideoDetails, onRemoveVideoDetails} = value
-
-        const addOrRemoveVideo = () => {
-          if (isSaved === true) {
+        const onClickSaveButton = () => {
+          if (result !== undefined) {
             onRemoveVideoDetails(id)
           } else {
             onSaveVideoDetails({...responseVideoDetails, saved: true})
           }
         }
 
-        const onClickSaveButton = () => {
-          this.setState(
-            prevState => ({
-              isSaved: !prevState.isSaved,
-            }),
-            addOrRemoveVideo,
-          )
-        }
-
         return (
           <DetailsMainContainer>
-            <div>
+            <div className="player1">
               <ReactPlayer
                 width="100%"
                 height="550px"
@@ -168,7 +157,17 @@ class VideoItemDetailsRoute extends Component {
                 controls
               />
             </div>
-            <VideoTitle>{title}</VideoTitle>
+            <div className="player2">
+              <ReactPlayer
+                width="100%"
+                height="250px"
+                url={videoUrl}
+                controls
+              />
+            </div>
+            <VideoTitle color={darkMode ? '#fff' : '#424242'}>
+              {title}
+            </VideoTitle>
             <div className="views-date">
               <div className="publish-divs">
                 <ViewAndData>{`${viewCount} • `}</ViewAndData>
@@ -207,20 +206,20 @@ class VideoItemDetailsRoute extends Component {
                   type="button"
                 >
                   <RiPlayListAddFill
-                    color={saved ? '#4f46e5' : '#181818'}
+                    color={result ? '#4f46e5' : '#64748b'}
                     size={25}
                   />
-                  {isSaved ? (
-                    <Save color="darkblue">Saved</Save>
+                  {result !== undefined ? (
+                    <Save color="#2563eb">Saved</Save>
                   ) : (
-                    <Save color="black">Save</Save>
+                    <Save color="#64748b">Save</Save>
                   )}
                 </button>
               </div>
             </div>
             <hr />
             <ChannelDetails>
-              <div>
+              <div className="channel-logo-small-container">
                 <img
                   className="channel-logo"
                   src={profileImg}
@@ -228,7 +227,9 @@ class VideoItemDetailsRoute extends Component {
                 />
               </div>
               <div>
-                <ChannelName>{channelName}</ChannelName>
+                <ChannelName color={darkMode ? '#fff' : '#424242'}>
+                  {channelName}
+                </ChannelName>
                 <Subs>{`${subs} subscribers`}</Subs>
                 <Description>{description}</Description>
               </div>

@@ -68,12 +68,18 @@ class TrendingRoute extends Component {
           const {darkMode} = value
 
           return (
-            <div className="content-container">
-              <div className="container">
+            <div
+              className={
+                darkMode ? 'content-container-darkMode' : 'content-container'
+              }
+            >
+              <div className={darkMode ? 'container-darkMode' : 'container'}>
                 <div className="logo-container">
                   <AiFillFire className="trending-icon" />
                 </div>
-                <TrendingHeading>Trending</TrendingHeading>
+                <TrendingHeading color={darkMode ? '#f0f8fa' : '#000000'}>
+                  Trending
+                </TrendingHeading>
               </div>
               <VideoItemContainer bgColor={darkMode ? '#0f0f0f' : '#f9f9f9'}>
                 {videoList.map(eachItem => (

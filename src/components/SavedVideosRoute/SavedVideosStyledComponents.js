@@ -15,6 +15,10 @@ export const VideoItemContainer = styled.ul`
   justify-content: space-between;
   width: 100%;
   background-color: ${props => props.bgColor};
+  @media (max-width: 768px) {
+    padding: 10px;
+    align-items: center;
+  }
 `
 export const EmptyViewContainer = styled.div`
   height: 100%;
@@ -24,13 +28,24 @@ export const EmptyViewContainer = styled.div`
   align-items: center;
 `
 export const NoSavedHeading = styled.h1`
-  color: #000;
+  color: ${props => props.color};
   font-family: 'Bree Serif';
   font-size: 20px;
 `
 
 export const NoSavedPara = styled.p`
-  color: #383838;
+  color: ${props => props.color};
   font-family: 'Serif';
   font-size: 20px;
+  text-align: center;
+`
+export const SavedVideosHeading = styled.h1`
+  color: ${props => props.color};
+  font-weight: bold;
+  font-size: 40px;
+  font-family: 'Bree Serif';
+  margin-left: 30px;
+  @media (max-width: 768px) {
+    font-size: 19px;
+  }
 `

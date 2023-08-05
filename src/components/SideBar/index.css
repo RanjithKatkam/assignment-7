@@ -1,7 +1,7 @@
 .icon {
   font-size: 25px;
   margin-left: 20px;
-  color: #606060;
+  color: #cccccc;
 }
 .icon1 {
   font-size: 25px;
@@ -31,4 +31,8 @@
 
 .div {
   padding: 20px;
+}
+
+.sidebar-heading {
+  color: #afb9b7 !important;
 }

@@ -54,9 +54,12 @@ export const DetailsMainContainer = styled.div`
   width: 100%;
   padding: 60px;
   overflow: auto;
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 `
 export const VideoTitle = styled.p`
-  color: #424242;
+  color: ${props => props.color};
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 22px;
   margin-top: 25px;
@@ -73,11 +76,14 @@ export const ChannelDetails = styled.div`
   align-items: flex-start;
 `
 export const ChannelName = styled.p`
-  color: #000;
+  color: ${props => props.color};
   font-family: 'Roboto';
   font-size: 18px;
   font-weight: 500;
   margin-top: 0px;
+  @media (max-width: 768px) {
+    margin-left: 5px;
+  }
 `
 export const Subs = styled.p`
   color: #909090;
