@@ -88,7 +88,7 @@ class LoginRoute extends Component {
               USERNAME
             </label>
             <input
-              placeholder="Enter Username"
+              placeholder="rahul/praneetha"
               className="input"
               type="text"
               id="username"
@@ -101,7 +101,7 @@ class LoginRoute extends Component {
               PASSWORD
             </label>
             <input
-              placeholder="Enter Password"
+              placeholder="rahul@2021/praneetha@2021"
               className="input"
               type={showPassword ? 'text' : 'password'}
               id="password"
