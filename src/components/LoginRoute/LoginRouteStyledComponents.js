@@ -6,6 +6,7 @@ export const MainContainer = styled.div`
   height: 100vh;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   background-color: #f4f4f4;
 `
 
@@ -18,6 +19,7 @@ export const FormContainer = styled.form`
   padding: 30px;
   width: 30%;
   border-radius: 10px;
+  box-shadow: 17px 17px 17px lightgray;
   @media (max-width: 768px) {
     width: 90%;
   }
