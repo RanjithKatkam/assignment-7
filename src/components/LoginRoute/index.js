@@ -128,16 +128,6 @@ class LoginRoute extends Component {
           <LoginButton type="submit">Login</LoginButton>
           {showSubmitMsg && <p className="error-msg">{`*${errorMsg}`}</p>}
         </FormContainer>
-        <div className="credentials">
-          <h1 className="credentials-heading">
-            You can use any of the following login credentials !
-          </h1>
-          <h1 className="cred-details">Username: rahul</h1>
-          <h1 className="cred-details">Password: rahul@2021</h1>
-          <hr />
-          <h1 className="cred-details">Username: praneetha</h1>
-          <h1 className="cred-details">Password: praneetha@2021</h1>
-        </div>
       </MainContainer>
     )
   }

@@ -6,7 +6,6 @@ export const MainContainer = styled.div`
   height: 100vh;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   background-color: #f4f4f4;
 `
 
@@ -22,6 +21,7 @@ export const FormContainer = styled.form`
   box-shadow: 17px 17px 17px lightgray;
   @media (max-width: 768px) {
     width: 90%;
+    height: 50%;
   }
 `
 export const InputContainer = styled.div`
@@ -42,5 +42,5 @@ export const LoginButton = styled.button`
   font-family: 'Bree Serif';
   font-weight: 500;
   font-size: 15px;
-  margin-top: 50px;
+  margin-top: 37px;
 `

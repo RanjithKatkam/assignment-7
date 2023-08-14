@@ -36,31 +36,3 @@
   text-align: left;
   margin-bottom: 0px;
 }
-
-.credentials {
-  height: 25%;
-  width: 22%;
-  padding: 10px;
-  margin-left: auto;
-  background-color: rgb(221, 217, 212);
-  border-radius: 20px;
-  border: 1px solid rgb(197, 188, 188);
-}
-
-.credentials-heading {
-  font-size: 14px;
-  font-family: 'Bree Serif';
-}
-
-.cred-details {
-  font-size: 12px;
-  font-family: cursive;
-}
-
-@media (max-width: 768px) {
-  .credentials {
-    width: 95%;
-    height: 26%;
-    margin-top: auto;
-  }
-}
